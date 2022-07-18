@@ -20,3 +20,12 @@ de Python. As três opções a seguir estão disponíveis em Django para usar a 
 * **Herança de modelos com várias tabelas**: aplicável quando cada modelo na hierarquia é considerado, por si só, um modelo completo
 * **Modelos proxy**: convenientes quando precisamos alterar o comportamento de um modelo, por exemplo,
 incluindo métodos adicionais, modificando o gerenciador default ou utilizando opções meta diferentes.
+
+### Usando mixins com views baseadas em classe
+
+As mixins são um tipo especial de herança múltipla para uma classe. Podemos usá-las para oferecer
+funcionalidades discretas comuns, as quais, quando adicionadas a outras mixins, permitirão definir
+o comportamento de uma classe. Há duas situações principais em que usamos mixins:
+
+* queremos oferecer vários recursos opcionais a uma classe;
+* queremos utilizar um recurso em particular em várias classes.
