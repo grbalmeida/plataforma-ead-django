@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
+from .fields import OrderField
 
 class Subject(models.Model):
     title = models.CharField(max_length=200)
@@ -41,8 +42,15 @@ class Module(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
 
+    # Isso significa que o número de ordem de um novo módulo será atribuído
+    # somando-se 1 ao último módulo do mesmo objeto Course.
+    order = OrderField(blank=True, for_fields=['course'])
+
     def __str__(self):
-        return self.title
+        return f'{self.order}. {self.title}'
+
+    class Meta:
+        ordering = ['order']
 
 class Content(models.Model):
     module = models.ForeignKey(Module, related_name='contents', on_delete=models.CASCADE)
@@ -55,6 +63,11 @@ class Content(models.Model):
 
     # Um campo GenericForeignKey para o objeto relacionado combinando os dois campos anteriores
     item = GenericForeignKey('content_type', 'object_id')
+
+    order = OrderField(blank=True, for_fields=['module'])
+
+    class Meta:
+        ordering = ['order']
 
 class ItemBase(models.Model):
     owner = models.ForeignKey(User, related_name='%(class)s_related', on_delete=models.CASCADE)
