@@ -71,3 +71,16 @@ Django disponibiliza as seguintes configurações de cache:
 Define um prefixo para evitar colisões de chaves caso você compartilhe o cache
 entre vários sites.
 * CACHE_MIDDLEWARE_SECONDS: o número default de segundos para as páginas do cache.
+
+### Níveis de cache
+
+Django oferece os seguintes níveis de caching, listados a seguir em ordem crescente de especificidade:
+
+* **API de baixo nível para o cache:** oferece o maior nível de especificidade. Permite fazer o caching
+de consultas ou de cálculos específicos.
+* **Cache de template:** permite fazer caching de fragmentos de templates.
+* **Cache por view:** oferece caching para views individuais.
+* **Cache por site:** o nível mais alto de caching. Faz o caching de todo o site.
+
+**IMPORTANTE:** Pense em sua estratégia de caching antes de implementá-la. Mantenha o foco inicialmente
+nas consultas ou nos cálculos custosos, que não sejam feitos por usuário.
