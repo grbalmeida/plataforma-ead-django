@@ -4,6 +4,7 @@ charset-normalizer==2.1.0
 Django==3.0.14
 django-braces==1.14.0
 django-embed-video==1.3.2
+django-memcache-status==2.2
 idna==3.3
 Pillow==7.0.0
 psycopg2-binary==2.8.4

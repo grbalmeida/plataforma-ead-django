@@ -59,13 +59,7 @@ O Memcached executa na memória e tem uma quantidade específica de RAM alocada 
 Quando a RAM alocada estiver cheia, o Memcached comecará a remover os dados mais antigos
 para armazenar novos dados.
 
-```
-docker pull memcached
-```
-
-```
-docker run --name my-memcache -d memcached
-```
+[Link para instalar Memcached no Windows](https://stackoverflow.com/questions/59476616/install-memcached-on-windows)
 
 ### Configurações de cache
 
