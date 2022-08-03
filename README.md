@@ -84,3 +84,8 @@ de consultas ou de cálculos específicos.
 
 **IMPORTANTE:** Pense em sua estratégia de caching antes de implementá-la. Mantenha o foco inicialmente
 nas consultas ou nos cálculos custosos, que não sejam feitos por usuário.
+
+### Caching de views
+
+**IMPORTANTE:** O cache por view utiliza o URL para criar a chave de cache. Vários
+URLS que apontem para a mesma view serão armazenados em cache separadamente.
