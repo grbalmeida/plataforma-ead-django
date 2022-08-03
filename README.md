@@ -89,3 +89,14 @@ nas consultas ou nos cálculos custosos, que não sejam feitos por usuário.
 
 **IMPORTANTE:** O cache por view utiliza o URL para criar a chave de cache. Vários
 URLS que apontem para a mesma view serão armazenados em cache separadamente.
+
+# REST
+
+### Definindo serializadores
+
+O framework disponibiliza as classes a seguir para construir serializadores para objetos individuais:
+
+* Serializer: provê serialização para instâncias de classes Python comuns;
+* ModelSerializer: provê serialização para instâncias de modelos;
+* HyperlinkedModelSerializer: igual a ModelSerializer, mas representa relacionamentos
+entre objetos com links em vez de usar chaves primárias.
