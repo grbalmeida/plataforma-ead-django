@@ -100,3 +100,25 @@ O framework disponibiliza as classes a seguir para construir serializadores para
 * ModelSerializer: provê serialização para instâncias de modelos;
 * HyperlinkedModelSerializer: igual a ModelSerializer, mas representa relacionamentos
 entre objetos com links em vez de usar chaves primárias.
+
+# Autenticação
+
+### Lidando com autenticação
+
+Eis os backends de autenticação oferecidos pelo framework REST:
+
+* BasicAuthentication: é a autenticação HTTP básica. O usuário e a senha são enviados pelo cliente
+no cabeçalho HTTP Authorization, codificados com Base64.
+
+* TokenAuthentication: é a autenticação baseada em token. Um modelo Token é usado para armazenar
+tokens de usuários. Os usuários incluem o token no cabeçalho HTTP Authorization para autenticação.
+
+* SessionAuthentication: utiliza o backend de sessão de Django para autenticação. Esse backend
+é conveniente para fazer requisições AJAX autenticadas à API a partir do frontend de seu site.
+
+* RemoteUserAuthentication: permite que você delegue a autenticação para o seu servidor web,
+que define uma variável de ambiente REMOTE_USER.
+
+**IMPORTANTE:** A autenticação apenas identifica o usuário que está fazendo a requisição.
+Ela não permite nem proíbe o acesso às views. Você deve usar as permissões para restringir
+o acesso a elas.
