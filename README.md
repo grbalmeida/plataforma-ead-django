@@ -101,6 +101,17 @@ O framework disponibiliza as classes a seguir para construir serializadores para
 * HyperlinkedModelSerializer: igual a ModelSerializer, mas representa relacionamentos
 entre objetos com links em vez de usar chaves primárias.
 
+### Criando viewsets e roteadores
+
+Os ViewSets permitem definir as interações com a sua API e deixam que o framework REST construa
+os URLs dinamicamente com um objeto Router. Ao usar viewsets, podemos evitar a repetição de
+uma lógica em várias views. Os viewsets incluem ações para as seguintes operações padrões:
+
+* operação de criação: create();
+* operação de leitura: list() e retrieve();
+* operação de atualização: update() e partial_update();
+* operação de remoção: destroy().
+
 # Autenticação
 
 ### Lidando com autenticação
